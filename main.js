@@ -50,6 +50,13 @@
                 $(botao).find('i').removeClass('d-none');
                 $(botao).find('span').addClass('d-none');
             }, 1000);
-        })
+        });
     })
+
+    $('#formulario-pedido').submit(function(event) { 
+        event.preventDefault();
+        if($('#nome').val().length == 0) {
+            throw new Error('Digite o nome');
+        }    
+    });
 });
